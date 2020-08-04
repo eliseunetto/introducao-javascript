@@ -70,3 +70,9 @@ th {
 	font-weight: bold;
 	background-color: #EEE;
 }
+
+.valor-invalido {
+	color: red;
+	background: lightcoral;
+	font-weight: bold;
+}

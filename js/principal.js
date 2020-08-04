@@ -27,6 +27,8 @@
                      tdIMC.textContent = "ERRO"
                      pesoEhValido = false;
                      console.log(msg); 
+                     tdIMC.classList.add("valor-invalido");
+                     tdPeso.classList.add("valor-invalido");
               }
 
               if(altura <= 0 || altura >= 3){
@@ -34,6 +36,8 @@
                      tdIMC.textContent = "ERRO"
                      alturaEhValida = false;
                      console.log(msg);
+                     tdIMC.classList.add("valor-invalido");
+                     tdAltura.classList.add("valor-invalido");
               }
 
               if(pesoEhValido && alturaEhValida){
