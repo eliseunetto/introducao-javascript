@@ -6,37 +6,42 @@
         console.log(titulo.textContent);
         titulo.textContent = "Aparecida Nutricionista";
 
-        var paciente = document.querySelector("#primeiro-paciente");
+        var pacientes = document.querySelectorAll(".paciente");
 
-        var tdPeso = paciente.querySelector(".info-peso");
-        var peso = tdPeso.textContent;
+        for(i = 0; i < pacientes.length; i++){
+              var paciente = pacientes[i];
 
-        var tdAltura = paciente.querySelector(".info-altura");
-        var altura = tdAltura.textContent;
+              var tdPeso = paciente.querySelector(".info-peso");
+              var peso = tdPeso.textContent;
 
-        var tdIMC = paciente.querySelector(".info-imc");
+              var tdAltura = paciente.querySelector(".info-altura");
+              var altura = tdAltura.textContent;
 
-        var pesoEhValido = true;
-        var alturaEhValida = true;
+              var tdIMC = paciente.querySelector(".info-imc");
 
-       // *** MODIFICANDO os valores para TESTE (validações)
-        peso = 70; // modificando o valor
-        altura = 1.6; // modificando o valor 
+              var pesoEhValido = true;
+              var alturaEhValida = true;
 
-        if(peso <= 0 || peso >= 500){
-              var msg = tdPeso.textContent = "Peso inválido!"; 
-              pesoEhValido = false;
-              console.log(msg); 
+              if(peso <= 0 || peso >= 500){
+                     var msg = tdPeso.textContent = "Peso inválido!";
+                     tdIMC.textContent = "ERRO"
+                     pesoEhValido = false;
+                     console.log(msg); 
+              }
+
+              if(altura <= 0 || altura >= 3){
+                     var msg = tdAltura.textContent = "Altura inválida!"; 
+                     tdIMC.textContent = "ERRO"
+                     alturaEhValida = false;
+                     console.log(msg);
+              }
+
+              if(pesoEhValido && alturaEhValida){
+                     var imc = peso / (altura * altura);
+                     tdIMC.textContent = imc.toFixed(2);
+              }
         }
+        
 
-        if(altura <= 0 || altura >= 3){
-              var msg = tdAltura.textContent = "Altura inválida!"; 
-              alturaEhValida = false;
-              console.log(msg);
-        }
 
-        if(pesoEhValido && alturaEhValida){
-              var imc = peso / (altura * altura);
-              tdIMC.textContent = imc;
-        }
         
