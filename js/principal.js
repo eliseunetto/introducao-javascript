@@ -16,6 +16,27 @@
 
         var tdIMC = paciente.querySelector(".info-imc");
 
-        var imc = peso / (altura * altura);
+        var pesoEhValido = true;
+        var alturaEhValida = true;
 
-       tdIMC.textContent = imc;
+       // *** MODIFICANDO os valores para TESTE (validações)
+        peso = 70; // modificando o valor
+        altura = -1.6; // modificando o valor 
+
+        if(peso <= 0 || peso >= 500){
+              var msg = tdIMC.textContent = "Peso inválido!"; 
+              pesoEhValido = false;
+              console.log(msg); 
+        }
+
+        if(altura <= 0 || altura >= 3){
+              var msg = tdIMC.textContent = "Altura inválida!"; 
+              alturaEhValida = false;
+              console.log(msg);
+        }
+
+        if(pesoEhValido && alturaEhValida){
+              var imc = peso / (altura * altura);
+              tdIMC.textContent = imc;
+        }
+        
