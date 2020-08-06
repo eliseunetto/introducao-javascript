@@ -74,5 +74,6 @@ th {
 .valor-invalido {
 	color: red;
 	background: lightcoral;
+	border: 1px solid red;
 	font-weight: bold;
 }

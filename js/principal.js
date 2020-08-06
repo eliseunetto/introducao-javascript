@@ -45,7 +45,6 @@
                      tdIMC.textContent = imc.toFixed(2);
               }
         }
-        
 
 
         
