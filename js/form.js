@@ -9,6 +9,11 @@ botaoAddPaciente.addEventListener("click", function(event) {
 
     // Cria a TR e a TD do Paciente
     var trPaciente = montaTr(paciente);
+    
+    if(!validaPaciente(paciente)){
+        console.log("Paciente inválido!");
+        return;
+    }
 
     // Adicionando o Paciente na Tabela
     var tabela = document.querySelector("#tabela-pacientes");
@@ -16,6 +21,8 @@ botaoAddPaciente.addEventListener("click", function(event) {
     tabela.appendChild(trPaciente);
 
     form.reset();
+
+   
 });
 
 function obtemPacienteDoFormulario(form){
@@ -56,4 +63,12 @@ function montarTd(dado, classe){
     td.classList.add(classe);
 
     return td;
+}
+
+function validaPaciente(paciente) {
+    if(validaPeso(paciente.peso)) {
+        return true;
+    }else {
+        return false;
+    }
 }
