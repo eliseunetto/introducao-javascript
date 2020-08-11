@@ -135,11 +135,10 @@ button[disabled=disabled], button:disabled {
 	margin-top: 30px;
 }
 
-#mensagem-erro {
-	display: block;
+#mensagens-erros {
 	color: red;
 	font-weight: bold;
 	font-size: 20px;
-	text-align: center;
-	margin-bottom: 0.6em;
+	margin-left: 3em;
+	margin-bottom: 0.7em;
 }
