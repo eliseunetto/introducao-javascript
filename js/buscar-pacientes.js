@@ -1,5 +1,21 @@
 var btnBuscarPacientes = document.querySelector("#buscar-pacientes");
+var btnBuscarPacientes = document.querySelector("#buscar-pacientes");
 
 btnBuscarPacientes.addEventListener("click", function(){
-    console.log("BNT Buscar Paciente CLICADO!");
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "http://api-pacientes.herokuapp.com/pacientes");
+
+    xhr.addEventListener("load", function(){
+        var resposta = xhr.responseText;
+
+        var pacientes = JSON.parse(resposta);
+
+        pacientes.forEach(function(paciente){
+            adicionaPacienteNaTabela(paciente);
+        });
+    });
+
+    xhr.send();
 });
