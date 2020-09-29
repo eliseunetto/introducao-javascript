@@ -23,6 +23,7 @@
             <h2 class="titulo">Meus pacientes</h2>
             <label for="filtrar-tabela">Filtrar:</label>
             <input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do paciente">
+            <span id="aviso">Para REMOVER algum registro, CLICK DUPLO sobre dado e/ou linha na Tabela</span>
             <table>
                 <thead>
                     <tr>
@@ -82,7 +83,7 @@
                     </tr>
                 </tbody>
             </table>
-
+            <span id="erro-ajax" class="invisivel">Erro ao buscar os pacientes</span>
             <button type="submit" id="buscar-pacientes" class="botao bto-primary">Buscar Pacientes</button>
 
         </section>

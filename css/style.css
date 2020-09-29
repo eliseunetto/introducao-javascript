@@ -157,3 +157,12 @@ button[disabled=disabled], button:disabled {
 .invisivel {
 	display: none;
 }
+
+#aviso {
+	color: red;
+	font-size: 12px;
+	float: right;
+	margin-top: 20px;
+	margin-right: 10px;
+}
+
